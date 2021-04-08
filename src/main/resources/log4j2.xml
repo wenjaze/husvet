@@ -20,6 +20,13 @@
             </filters>
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </File>
+        <!-- NoMarkers -->
+        <File name="NoMarkers" fileName="src/test/logs/nomarkers.log">
+            <filters>
+                <NoMarkerFilter onMatch="ACCEPT" onMismatch="DENY"/>
+            </filters>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </File>
 
     </Appenders>
     <Loggers>
