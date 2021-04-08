@@ -19,11 +19,13 @@ public class Main {
                         "Szabad-e locsolni?"};
 
         for (int i = 0 ; i < nrOfIter;++i){
+            ThreadContext.put("iterationId",Integer.toString(i));
             easterLogger.warn(poem[0]);
             easterLogger.trace(statementMarker,poem[1]);
             easterLogger.info(statementMarker,poem[2]);
             easterLogger.error(requestMarker,poem[3]);
             Thread.sleep(delay);
+            ThreadContext.clearMap();
         }
     }
 
