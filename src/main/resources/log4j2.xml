@@ -1,11 +1,12 @@
 <Configuration status="debug">
     <Properties>
-        <Property name="LOG_PATTERN">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Property>
+        <Property name="LOG_PATTERN">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg iteration : [%X{iterationId}]%n</Property>
     </Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%highlight{${LOG_PATTERN}}"/>
+            <PatternLayout pattern="%highlight{${LOG_PATTERN}} "/>
         </Console>
+
         <!-- Statement markers -->
         <File name="Statement" fileName="src/test/logs/statements.log">
             <filters>
@@ -29,6 +30,7 @@
         </File>
 
     </Appenders>
+
     <Loggers>
         <Root level="all">
             <AppenderRef ref="Console"/>
