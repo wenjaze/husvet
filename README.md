@@ -20,7 +20,7 @@ Hozz létre egy Apache Maven projektet az alábbi két függőséggel:
     org.apache.logging.log4j:log4j-api:2.14.1
     org.apache.logging.log4j:log4j-core:2.14.1
 
-Készíts egy olyan Main osztályt, melynek main metódusa egy húsvéti locsolóvers sorait naplózza többször egymás után, ahol az iterációk száma parancssor argumentumként legyen megadható. A verssorok naplózása különböző szinteken történjen. A naplózáshoz legalább két különböző markert kell használni, a ciklusban egy kivételével minden egyes naplóüzenetet meg kell jelölni valamelyik markerrel. Például különböző markerek használhatók a kijelentésekhez ("Zöld erdőben jártam") és a kérelmekhez ("Szabad-e locsolni?"). Az egyes iterációk között legyen egy kis késleltetés, ehhez használd a Thread.sleep(long millis) metódust.
+Készíts egy olyan pkg.Main osztályt, melynek main metódusa egy húsvéti locsolóvers sorait naplózza többször egymás után, ahol az iterációk száma parancssor argumentumként legyen megadható. A verssorok naplózása különböző szinteken történjen. A naplózáshoz legalább két különböző markert kell használni, a ciklusban egy kivételével minden egyes naplóüzenetet meg kell jelölni valamelyik markerrel. Például különböző markerek használhatók a kijelentésekhez ("Zöld erdőben jártam") és a kérelmekhez ("Szabad-e locsolni?"). Az egyes iterációk között legyen egy kis késleltetés, ehhez használd a Thread.sleep(long millis) metódust.
 
 A projekthez készíts egy log4j2.xml állományt, mely egy ConsoleAppender-t és megfelelő számú FileAppender-t konfigurál az alábbi módon.
 

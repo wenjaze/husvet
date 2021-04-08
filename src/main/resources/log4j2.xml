@@ -1,0 +1,38 @@
+<Configuration status="debug">
+    <Properties>
+        <Property name="LOG_PATTERN">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{${LOG_PATTERN}}"/>
+        </Console>
+        <!-- Statement markers -->
+        <File name="Statement" fileName="src/test/logs/statements.log">
+            <filters>
+                <MarkerFilter marker="STATEMENT"  onMatch="ACCEPT" onMismatch="DENY"/>
+            </filters>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </File>
+        <!-- Request markers -->
+        <File name="Request" fileName="src/test/logs/requests.log">
+            <filters>
+                <MarkerFilter marker="REQUEST"  onMatch="ACCEPT" onMismatch="DENY"/>
+            </filters>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </File>
+
+    </Appenders>
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+    <Loggers>
+        <Logger name="easterLogger" additivity="true" level="all">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="Statement"/>
+            <AppenderRef ref="Request"/>
+            <AppenderRef ref="NoMarkers"/>
+        </Logger>
+    </Loggers>
+</Configuration>
